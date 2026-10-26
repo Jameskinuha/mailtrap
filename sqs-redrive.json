@@ -1,0 +1,1 @@
+{"RedrivePolicy":"{\"deadLetterTargetArn\":\"arn:aws:sqs:ap-southeast-2:408852558600:mercado-que-dlq\",\"maxReceiveCount\":\"3\"}"}

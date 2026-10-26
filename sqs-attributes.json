@@ -1,0 +1,4 @@
+{
+  "VisibilityTimeout": "180",
+  "ReceiveMessageWaitTimeSeconds": "20"
+}

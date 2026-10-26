@@ -1,0 +1,16 @@
+{
+    "name": "student/marketing-email-lab",
+    "description": "PHP SQS marketing email laboratory",
+    "type": "project",
+    "require": {
+        "php": "^8.2",
+        "aws/aws-sdk-php": "^3.0",
+        "phpmailer/phpmailer": "^6.9",
+        "fakerphp/faker": "^1.23"
+    },
+    "autoload": {
+        "psr-4": {
+            "Lab\\": "src/"
+        }
+    }
+}
