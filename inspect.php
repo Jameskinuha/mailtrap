@@ -27,3 +27,30 @@ if (!$rows) {
         echo $row['status'] . ": " . $row['total'] . PHP_EOL;
     }
 }
+
+echo PHP_EOL . "=== SENT EMAILS ===" . PHP_EOL;
+
+$stmt = $db->query(
+    "SELECT campaign_id, customer_id, recipient_email, subject, provider, message_id, sent_at
+     FROM sent_marketing_emails
+     WHERE status = 'SENT'
+     ORDER BY sent_at, campaign_id, customer_id"
+);
+
+$rows = $stmt->fetchAll();
+
+if (!$rows) {
+    echo "No sent email records found." . PHP_EOL;
+} else {
+    foreach ($rows as $row) {
+        echo implode(' | ', [
+            $row['campaign_id'],
+            $row['customer_id'],
+            $row['recipient_email'] ?? 'unknown recipient',
+            $row['subject'],
+            $row['provider'] ?? 'unknown provider',
+            $row['message_id'] ?? 'no message ID',
+            $row['sent_at'] ?? 'unknown send time',
+        ]) . PHP_EOL;
+    }
+}
